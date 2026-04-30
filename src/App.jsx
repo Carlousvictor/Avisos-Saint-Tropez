@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import TaskColumn from './components/TaskColumn';
 import TaskModal from './components/TaskModal';
+import Login from './components/Login';
 import { useTaskStore, PERIODS } from './store/useTaskStore';
 
 function App() {
-  const { tasks, addTask, removeTask, updateTask } = useTaskStore();
+  const { tasks, addTask, removeTask, updateTask, isAuthenticated } = useTaskStore();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedPeriod, setSelectedPeriod] = useState('daily');
+
+  if (!isAuthenticated) {
+    return <Login />;
+  }
+
 
   const handleOpenAdd = (periodId) => {
     setSelectedPeriod(periodId);

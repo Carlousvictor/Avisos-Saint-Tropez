@@ -78,6 +78,18 @@ export const useTaskStore = create(
         }
       })),
 
+      isAuthenticated: false,
+
+      login: (username, password) => {
+        if (username === 'adminst' && password === 'sT489#') {
+          set({ isAuthenticated: true });
+          return true;
+        }
+        return false;
+      },
+
+      logout: () => set({ isAuthenticated: false }),
+
       resetTasks: () => {
         if (confirm('Deseja resetar todas as tarefas para o padrão original?')) {
           set({ tasks: DEFAULT_TASKS });
