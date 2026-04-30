@@ -1,0 +1,1432 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Saint Tropez</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/gradient-navbar-1.css">
+    <link rel="stylesheet" href="assets/css/gradient-navbar.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Social-Icons.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/sun1.css?p=1">
+
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+
+<!--<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />-->
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+<title>Saint Tropez</title>
+
+
+
+
+
+<style>
+:root {
+  /*--v1: #be91c6;*/
+  --v1: #53B5FD;
+  /*--v2: #8a65cc; */
+  --v2: #009999;
+  /*--v3: #5e30d9;*/
+  --v3: #039CC9;
+  --transparentv3: #5e30d900;
+  /*--v4: #3b1895; */
+  --v4: #027191;
+  /*--s1: #fea798; */
+  --s1: #FEF801;
+  /*--s2: #ff846e; */
+  --s2: #C1E8FF;
+  --cloud: #fea798;
+}
+
+/*.....................*/
+.miolo {
+border: 1px none #ff0000;
+text-align:center;
+}
+
+.conteudo {
+z-index:9999999999999;
+position: absolute;
+top:0px;
+left:0px;
+width:100%;
+height:300px;
+margin-left:calc(0%);
+border:1px solid #ff000 !important;
+/*background:rgba(180,180,180,.6);*/
+-webkit-animation: conteudoW 5s ease-out forwards;
+          animation: conteudoW 5s ease-out forwards;
+}
+
+/*................*/
+
+
+/*....................*/
+
+.landscape:after,
+.landscape:before,
+.landscape *,
+.landscape *:after,
+.landscape *:before {
+  position: absolute;
+}
+
+.front {
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.landscape {
+  height: 100vh;
+  background-image: linear-gradient(var(--v1), var(--s1), var(--v1));
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.mountain {
+  border-radius: 180% 80% 0% 0%/60vmin 60vmin 0% 0%;
+  width: 40vmin;
+  height: 30vmin;
+  bottom: 50%;
+  left: -10vmin;
+  background: var(--s1);
+  background-image: linear-gradient(var(--v1), var(--v2) 30%, var(--v3));
+  box-shadow: inset -10px 0 10px -10px var(--s1);
+}
+.mountain:before {
+  content: "";
+  bottom: 0;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  border-radius: inherit;
+  transform-origin: bottom center;
+  transform: scaleX(1) scaleY(-0.6);
+  filter: blur(3px);
+}
+
+.mountain-2 {
+  left: 5vmin;
+  height: 15vmin;
+  width: 40vmin;
+  box-shadow: inset -15px 0 10px -14px var(--s1);
+  border-radius: 120% 50% 0% 0%/25vmin 25vmin 0% 0%;
+  background-image: linear-gradient(var(--v3), var(--v4));
+}
+
+.mountain-3 {
+  border-radius: 80% 0% 0 0/100% 100% 0 0;
+  right: -85vmin;
+  width: 100vmin;
+  left: auto;
+  height: 12vmin;
+  color: var(--v3);
+  background-image: linear-gradient(var(--s1), var(--v4));
+  box-shadow: inset 15px 0 10px -10px var(--s1);
+}
+
+.mountain-3:after {
+  content: "";
+  border-radius: 60% 0 0 0/100% 0 0 0;
+  background: inherit;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  right: 20%;
+}
+
+.lotus {
+  width: 10vmin;
+  height: 5vmin;
+  background: conic-gradient(var(--v3) 0deg 40deg, var(--transparentv3) 50deg 70deg, var(--v3) 80deg);
+  border-radius: 50%;
+}
+
+.lotus-1 {
+  bottom: 10vmin;
+  right: 5vmin;
+  width: 20vmin;
+}
+
+.lotus-2 {
+  bottom: 20vmin;
+  right: 15vmin;
+  height: 3vmin;
+  transform: skew(-10deg);
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+.lotus-3 {
+  bottom: 10vmin;
+  right: 35vmin;
+  transform: rotate(180deg) skew(-20deg);
+  opacity: 0.8;
+  width: 15vmin;
+}
+
+.cloud {
+  width: 80vmin;
+  height: 6vmin;
+  background: currentcolor;
+  color: var(--cloud);
+  top: 24vmin;
+  left: 20vmin;
+  border-radius: 50%;
+  box-shadow: 30vmin 0.5vmin 0 -1vmin currentcolor, -25vmin 0 0 -0.6vmin currentcolor;
+  opacity: 0.3;
+  transform: translate3d(-150vmin, 0, 0);
+  -webkit-animation: clouds 120s infinite;
+          animation: clouds 120s infinite;
+  -webkit-animation-delay: -10s;
+          animation-delay: -10s;
+}
+
+@-webkit-keyframes clouds {
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(150vmin, 0, 0);
+  }
+}
+
+@keyframes clouds {
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(150vmin, 0, 0);
+  }
+}
+.cloud-1 {
+  left: 60vmin;
+  top: 15vmin;
+  opacity: 0.2;
+  filter: blur(1px);
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-duration: 100s;
+          animation-duration: 100s;
+}
+
+.water {
+  top: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(#fea79855, var(--v2));
+  /*background-image: url("sea.png"); */
+  background-size: cover;
+  overflow: hidden;
+  box-shadow: inset 0 1px 4px -3px white;
+}
+
+.stone {
+  bottom: -5vh;
+  left: 0;
+  height: 20vmin;
+  width: 40vmin;
+  background: var(--v4);
+  box-shadow: inset 0 0 20px -5px rgba(0, 0, 0, 0.2);
+  border-radius: 0% 200% 0 0/0% 200%;
+}
+
+.stone:after {
+  content: "";
+  background: var(--v3);
+  width: 100%;
+  height: 100%;
+  right: -15%;
+  border-radius: inherit;
+  z-index: -1;
+  transform: scaleX(1.3) skew(10deg);
+  box-shadow: inset 0 0 20px -5px rgba(0, 0, 0, 0.4);
+}
+
+.grass {
+  height: 40vmin;
+  width: 10vmin;
+  border-radius: 0 60% 0 0/0 100% 0 0;
+  bottom: 0;
+  border-right: 5px solid var(--v4);
+  box-shadow: 1px 0 0 var(--s1);
+  filter: drop-shadow(-0.5vmin 6vmin 0 var(--s2)) drop-shadow(-4.5vmin 10vmin 0 var(--v3));
+}
+
+.grass-1 {
+  left: 14vmin;
+  bottom: -2vmin;
+  transform: scaleX(-1);
+  box-shadow: 2px 0 0 var(--v4);
+  border-color: var(--v3);
+  filter: drop-shadow(-1vmin 5vmin 0 var(--v3)) drop-shadow(-80vmin 5vmin 0 var(--v4));
+}
+
+.grass-2 {
+  right: 0;
+  left: auto;
+  height: 20vmin;
+  bottom: -2vmin;
+  transform: scaleX(-1);
+}
+
+.sun {
+  background: #E6C057;
+  border-radius: 50%;
+  width: 42vmin;
+  height: 42vmin;
+  left: calc(50% - 21vmin);
+  top: 100%;
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: rise 3s ease-out forwards;
+          animation: rise 3s ease-out forwards;
+  box-shadow: 0 0 10px white;
+}
+
+.reed {
+  height: 40vmin;
+  width: 0.5vmin;
+  bottom: 0;
+  left: 10vmin;
+  color: var(--v4);
+  background: currentColor;
+  transform-origin: bottom center;
+  transform: rotate(4deg);
+  box-shadow: inset -1px 0 0 var(--s2), -6vmin 3vmin 0 0, 80vmin 0 0 0;
+  -webkit-animation: verticalise 20s infinite;
+          animation: verticalise 20s infinite;
+}
+
+.reed-1 {
+  color: var(--s2);
+  left: 15vmin;
+  height: 50vmin;
+  bottom: -5vmin;
+  transform: rotate(-2deg);
+  -webkit-animation: verticalise-1 20s infinite;
+          animation: verticalise-1 20s infinite;
+  box-shadow: inset -1px 0 0 var(--s1), 6vmin 13vmin 0 0 var(--s1), 80vmin 10vmin 0 0 var(--v3);
+}
+
+.reed:after {
+  content: "";
+  width: 1.5vmin;
+  height: 10vmin;
+  background: currentcolor;
+  border-radius: 0.75vmin;
+  top: 0;
+  left: -0.5vmin;
+  box-shadow: inherit;
+}
+
+@-webkit-keyframes verticalise {
+  0%, 10% {
+    transform: rotate(4deg);
+  }
+  30%, 70% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes verticalise {
+  0%, 10% {
+    transform: rotate(4deg);
+  }
+  30%, 70% {
+    transform: rotate(0);
+  }
+}
+@-webkit-keyframes verticalise-1 {
+  0%, 10% {
+    transform: rotate(-2deg);
+  }
+  45%, 70% {
+    transform: rotate(0) translateY(-6vmin);
+  }
+}
+@keyframes verticalise-1 {
+  0%, 10% {
+    transform: rotate(-2deg);
+  }
+  45%, 70% {
+    transform: rotate(0) translateY(-6vmin);
+  }
+}
+
+
+@-webkit-keyframes rise-reflection {
+  30% {
+    opacity: 0;
+    transform: translate3d(0, -40vmin, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -20vmin, 0);
+  }
+}
+@keyframes rise-reflection {
+  30% {
+    opacity: 1;
+    transform: translate3d(0, -40vmin, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, -20vmin, 0);
+  }
+}
+.sun-container {
+  overflow: hidden;
+  width: 100%;
+  height: 50%;
+}
+
+.sun-container-1:after {
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 100%, var(--s2), transparent);
+  -webkit-animation: fade 20s infinite;
+          animation: fade 20s infinite;
+  mix-blend-mode: color-burn;
+}
+
+@-webkit-keyframes fade {
+  10% {
+    opacity: 1;
+  }
+  30%, 70% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade {
+  10% {
+    opacity: 1;
+  }
+  30%, 70% {
+    opacity: 0;
+  }
+}
+.sun-container-reflection {
+  top: 50%;
+  background: radial-gradient(circle at 50% 0%, var(--s2), transparent);
+}
+
+.sun-container-reflection .sun {
+  background: linear-gradient(white, rgba(255, 255, 255, 0));
+  box-shadow: none;
+  filter: blur(5px);
+  opacity: 1;
+  top: 0;
+  transform: translate3d(0, -20vmin, 0);
+  -webkit-animation-name: rise-reflection;
+          animation-name: rise-reflection;
+}
+
+.light {
+  height: 0.5vmin;
+  width: 20vmin;
+  background: white;
+  left: 0%;
+  right: 0;
+  margin: auto;
+  top: calc(50% + 1vmin);
+  -webkit-animation: light 10s infinite;
+          animation: light 10s infinite;
+  opacity: 0;
+  transform: scaleX(0.1) translate3d(0%, 0, 0);
+  border-radius: 0.25vh;
+  filter: blur(1px);
+}
+
+@-webkit-keyframes light {
+  5% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  10% {
+    opacity: 0.6;
+    transform: scaleX(1) translate3d(5%, 0, 0);
+  }
+  15% {
+    opacity: 0.6;
+    transform: scaleX(1) translate3d(-5%, 0, 0);
+  }
+  20% {
+    opacity: 0;
+    transform: scaleX(0.1) translate3d(0, 0, 0);
+  }
+}
+@keyframes light {
+  5% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  10% {
+    opacity: 0.6;
+    transform: scaleX(1.5) translate3d(5%, 0, 0);
+  }
+  15% {
+    opacity: 0.6;
+    transform: scaleX(1.5) translate3d(-5%, 0, 0);
+  }
+  20% {
+    opacity: 0.5;
+    transform: scaleX(0.1) translate3d(0, 0, 0);
+  }
+}
+.light-1 {
+  top: calc(50% + 2vmin);
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.light-2 {
+  top: calc(50% + 3vmin);
+  width: 40vmin;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.light-3 {
+  top: calc(50% + 4vmin);
+  width: 40vmin;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.light-4 {
+  top: calc(50% + 5vmin);
+  width: 35vmin;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.light-5 {
+  top: calc(50% + 8vmin);
+  width: 30vmin;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.light-6 {
+  top: calc(50% + 9vmin);
+  width: 20vmin;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.light-7 {
+  top: calc(50% + 7vmin);
+  width: 15vmin;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+.splash {
+  width: 8vmin;
+  height: 3vmin;
+  border: 2px solid var(--s1);
+  box-shadow: 0 0 2px var(--s1);
+  border-radius: 50%;
+  bottom: 5vmin;
+  left: 70%;
+  -webkit-animation: splash 9s infinite;
+          animation: splash 9s infinite;
+  transform: scale(0);
+}
+
+.splash-stone {
+  bottom: 15vh;
+  left: -3vmin;
+  height: 10vmin;
+  width: 30vmin;
+}
+
+.splash-4 {
+  bottom: 5vmin;
+  left: auto;
+  bottom: 15vmin;
+  right: -2vmin;
+}
+
+@-webkit-keyframes splash {
+  50%, 100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes splash {
+  50%, 100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.delay-1 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.delay-2 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.delay-3 {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.delay-4 {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+
+.delay-5 {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.delay-6 {
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+}
+
+/*.........................................*/
+
+
+.logo {
+background-size: cover;
+position: absolute;
+z-index:9999999999999;
+-webkit-animation: logo 8s ease-out forwards;
+animation: logo 8s ease-out forwards;
+}
+
+.img_logo {
+/*marrom gaivota: #5B0D17 */
+background: url(gaiv2.gif) no-repeat;
+background-position: 0px -60px;
+background-size: cover;
+width:100%;
+}
+
+
+@-webkit-keyframes rise {
+  100% {
+    transform: translate3d(0, -20vh, 20vmin);
+  }
+}
+@keyframes rise {
+  100% {
+    transform: translate3d(0, -20vh, 20vmin);
+  }
+}
+
+
+
+@media only screen and (max-width: 390px) {
+@-webkit-keyframes rise {
+  100% {
+    transform: translate3d(0, -9vh, 9vmin);
+  }
+}
+@keyframes rise {
+  100% {
+    transform: translate3d(0, -9vh, 9vmin);
+  }
+}
+/*.........*/
+.img_logo {
+background-position: 0px -28px;
+width:100%;
+height:auto;
+}
+.logo {
+width: 320px;
+height:136px;
+top: calc((100% - 220px) / 2);
+left: calc((100% - 320px) / 2);
+border:1px none #00FF00;
+}
+}
+/*...............*/
+@media only screen and (min-width: 391px) and (max-width: 575px) {
+@-webkit-keyframes rise {
+  100% {
+    transform: translate3d(0, -13vh, 13vmin);
+  }
+}
+@keyframes rise {
+  100% {
+    transform: translate3d(0, -13vh, 13vmin);
+  }
+}
+
+/*........*/
+.img_logo {
+background-position: 0px -30px;
+width:100%;
+height:auto;
+}
+.logo {
+width: 391px;
+height:166px;
+top: calc((100% - 270px) / 2);
+left: calc((100% - 391px) / 2);
+border:1px none #00FF00;
+}
+}
+/*...............*/
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+@-webkit-keyframes rise {
+  100% {
+    transform: translate3d(0, -19vh, 19vmin);
+  }
+}
+@keyframes rise {
+  100% {
+    transform: translate3d(0, -19vh, 19vmin);
+  }
+}
+
+/*........*/
+.img_logo {
+background-position: 0px -45px;
+width:100%;
+height:auto;
+}
+.logo {
+width: 570px;
+height:242px;
+top: calc((100% - 390px) / 2);
+left: calc((100% - 570px) / 2);
+border:1px none #0000FF;
+}
+}
+@media only screen and (min-width: 768px) {
+.logo {
+width: 688px;
+height:292px;
+top: calc((100% - 470px) / 2);
+left: calc((100% - 698px) / 2);
+border:1px none #ff0000;
+}
+
+}
+
+/*........................*/
+@-webkit-keyframes logo {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+ }
+@keyframes logo {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  }
+/*.................*/
+@-webkit-keyframes conteudoW {
+  0% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes conteudoW {
+  0% {
+    opacity: 0;
+  }
+  94% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  }
+
+/*..................*/
+@media (max-width: 575px) {
+  .btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-right: 14px;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+
+
+
+</style>
+<script>
+function posicao() {
+    var el = document.getElementById("logo_palavra");
+    var coordenadas = el.getBoundingClientRect();
+    //alert('position x: '+coordenadas.left+'\n'+'position y: '+coordenadas.top+'\n'+'altura: '+el.clientHeight);
+    document.getElementById("div_endereco").style.marginTop = parseInt(coordenadas.top + (el.clientHeight - 70)) + "px";
+    //alert("width: "+screen.width+"\n"+"height: "+screen.height);
+}
+
+function move_Endereco(){
+var altura = document.getElementById("logo_palavra").clientHeight;
+//alert(altura);
+var parametro = parseInt(screen.height / 9);
+//alert(parametro);
+//document.getElementById("div_endereco").style.marginTop = parseInt(altura + parametro)+"px";
+
+setTimeout("posicao()", 300);
+}
+
+
+</script>
+
+
+
+</head>
+
+<body>
+<!--
+<IFRAME name="frame_grava" id="frame_grava" SRC="gaivotas1.mp3" width="500" height="50" style="border:1px solid #FF0000" border="1" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" allowtransparency="true"></IFRAME>
+-->
+<div class="conteudo">
+ <div class="social-icons" style="height: 30px;position: absolute;">
+
+ 
+            <a data-toggle="tooltip" data-bs-tooltip="" data-placement="bottom" href="https://www.facebook.com/profile.php?id=100071520235771"
+            style="border-right: 1px solid rgba(255,255,255,0.6);" target="_blank" title="FACEBOOK"><i class="icon ion-social-facebook"></i></a>
+            
+            <a data-toggle="tooltip" data-bs-tooltip="" data-placement="bottom" href="https://api.whatsapp.com/send?phone=5521964816044"
+            style="border-right: 1px none #FF0000;" target="_blank" title="WHATSAPP"><i class="icon ion-social-whatsapp"></i></a></div>
+            
+            
+    <nav class="navbar navbar-dark navbar-expand-md" id="app-navbar">
+        <div class="container-fluid"><a class="navbar-brand" href="#"><img src="assets/img/logo-novo-transp-mini1.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1" style="margin-top: 20px;">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index1.php">Morador</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index20.php">Visitante</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index1.php">Administracao</a></li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+  <!--
+    <div class="miolo">
+    <img src="white.gif" width="500" height="300" border="0">
+    </div>
+    -->
+    <div id="div_endereco" style="margin-top:32%;border:1px none #ff0000;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <p><i class="icon ion-ios-location" style="margin-right: 10px;"></i><strong style="width: 96%;margin: 0px;">Av. das Américas 489 - Barra da Tijuca -Rio de Janeiro - RJ<br></strong><strong style="margin: 0px;"><i class="fa fa-phone-square" style="margin-right: 8px;"></i>21-3042-6077<br></strong>
+                        <a
+                            href="mailto:adminstracao@jardimsainttropez.com.br" target="_blank"><strong style="margin: 0px;"><i class="icon ion-android-mail" style="margin-right: 8px;"></i>adminstracao@jardimsainttropez.com.br<br></strong></a>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="text-align: center;">
+                    <div class="btn-group" role="group">
+                    <a class="btn btn-primary" role="button" style="" href="index1.php">Morador</a>
+                    <a class="btn btn-primary" role="button" style="" href="index20.php">Visitante</a>
+                    <a class="btn btn-primary" role="button" style="" href="index1.php">Administração</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--
+    <div class="miolo">
+    <img src="white.gif" width="500" height="10" border="0">
+    </div>
+    -->
+    <div class="footer-basic" style="height:130px;margin:0px;margin-top:10px;padding-top:10px;bottom: 0;background-color: rgba(255,255,255,.0);">
+        <footer>
+            <div class="social" style="padding-bottom: 5px;">
+         
+            <a href="https://www.facebook.com/profile.php?id=100071520235771" target="_blank"><i class="icon ion-social-facebook" style="color:#ffffff"></i></a></div>
+            <ul class="list-inline" style="background-color: rgba(255,255,255,.0);">
+                <li class="list-inline-item"><a href="javascript:abre_Popup_PDF('pdf/Regulamento Interno Saint Tropez.pdf');" style="color:#000000">Conheça Nosso Regulamento</a></li>
+               
+            </ul>
+            <p class="copyright" style="margin-top: 0px;margin-bottom:0px;color:#404040">Condomínio Jardim Saint Tropez © 2021</p>
+        </footer>
+    </div>
+</div>
+
+<div class="logo">
+<img src="logo-palavra3.png" id="logo_palavra" class="img_logo" style="" border="0">
+</div>
+  <div class="landscape">
+
+  <div class="mountain"></div>
+  <div class="mountain mountain-2"></div>
+  <div class="mountain mountain-3"></div>
+  <div class="sun-container sun-container-1">
+  </div>
+  <div class="sun-container">
+    <div class="sun"></div>
+  </div>
+  <div class="cloud"></div>
+  <div class="cloud cloud-1"></div>
+
+  <div class="sun-container sun-container-reflection" style="border:1px solid #ffffff">
+    <div class="sun"></div>
+  </div>
+  <div class="light"></div>
+  <div class="light light-1"></div>
+  <div class="light light-2"></div>
+  <div class="light light-3"></div>
+  <div class="light light-4"></div>
+  <div class="light light-5"></div>
+  <div class="light light-6"></div>
+  <div class="light light-7"></div>
+  <div class="water"></div>
+  <div class="splash"></div>
+  <div class="splash delay-1"></div>
+  <div class="splash delay-2"></div>
+  <div class="splash splash-4 delay-2"></div>
+  <div class="splash splash-4 delay-3"></div>
+  <div class="splash splash-4 delay-4"></div>
+  <div class="splash splash-stone delay-3"></div>
+  <div class="splash splash-stone splash-4"></div>
+  <div class="splash splash-stone splash-5"></div>
+  <div class="lotus lotus-1"></div>
+  <div class="lotus lotus-2"></div>
+  <div class="lotus lotus-3"></div>
+  <div class="front">
+    <div class="stone"></div>
+    <div class="grass"></div>
+    <div class="grass grass-1"></div>
+    <div class="grass grass-2"></div>
+    <div class="reed"></div>
+    <div class="reed reed-1"></div>
+  </div>
+</div>
+
+<script>
+setTimeout("move_Endereco()", 500);
+</script>
+
+ <script src="assets/js/jquery.min.js"></script>
+ <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+ <script src="assets/js/bs-init.js"></script>
+
+</body>
+
+
+
+
+<!--   .............................................................................. -->
+<style>
+input[type=button] {
+width:auto !important;
+}
+
+#window_confirm{
+display: block;
+overflow:auto;
+position: absolute;
+top:0%;
+width:auto;
+height:95%;
+margin-top:10px;
+border:1px solid #B0B0B0;
+background:#FFFFff;
+padding:0px;
+z-index: 9999999999999999999999;
+opacity:0; animation: sombraW 3s linear forwards;
+/*transition: height 3.00s; */
+max-width: device-width;
+}
+/*.........................*/
+#window_notas{
+display: block;
+overflow:auto;
+position: absolute;
+top:0%;
+width:auto;
+height:95%;
+margin-top:10px;
+border:1px solid #B0B0B0;
+background:#FFFFff;
+padding:0px;
+z-index: 9999999999999999999999;
+opacity:0; animation: sombraW 3s linear forwards;
+/*transition: height 3.00s; */
+max-width: device-width;
+}
+/*.........................*/
+@keyframes sombraW {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
+/*........................*/
+#window_confirm #img_main {
+-webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.55);
+-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.55);
+box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.55);
+/*........*/
+border:1px none #0000FF;
+-webkit-border-radius: 0.6rem;
+border-radius: 0.6rem;
+/*........*/
+margin-bottom:20px;
+}
+
+.img_fecha{
+width:100px;
+height:100px;
+}
+
+
+/*........................................................*/
+@media only screen and (max-width: 991px){
+.img_fecha{
+width:60px;
+height:60px;
+max-width:60px;
+}
+}
+
+/*........................................................*/
+
+@media only screen and (min-width: 992px){
+#window_confirm, #window_notas{
+width:74%;
+max-width:1000px;
+}
+#window_confirm #img_main, #window_confirm #p_fecha, #window_notas #p_fecha2{
+/*width:80%;  */
+max-width:1000px;
+}
+#window_confirm #p_fecha, #window_notas #p_fecha2{
+margin:5px;height:30px;padding:0px;line-height:30px;text-align:right;
+}
+
+#window_confirm #img_fecha, #window_notas #img_fecha2{
+height:28px;
+width:28px;
+}
+
+.img_fecha{
+width:50px;
+height:50px;
+}
+
+#div_sobre {
+width:100%;
+height:50px;
+margin:0px;
+padding:0px;
+position:absolute;
+z-index:999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+top:45px;
+left:0px;
+border:1px none #FF0000;
+display:none;
+}
+
+}
+
+
+
+/*...........................*/
+
+</style>
+<script>
+function my_window1(destino,xlarg,xalt){
+var mlarg = screen.width;
+var malt = screen.height;
+var xpos = Number(mlarg-xlarg)/2;
+var ypos = Number(((malt-xalt)/2)-50);
+
+window.open(destino , "janela1" , "status=yes , scrollbars=yes ,resizable=yes, width="+xlarg+", height="+xalt+" , top="+ypos+" , left="+xpos);
+}
+/*.................................*/
+function my_window2(destino, xlarg, xalt){
+var mlarg = screen.width;
+var malt = screen.height;
+var xpos = Number(mlarg-xlarg)/2;
+var ypos = Number(((malt-xalt)/2)-50);
+
+window.open(destino , "janela2" , "status=yes , scrollbars=yes ,resizable=yes, width="+xlarg+", height="+xalt+" , top="+ypos+" , left="+xpos);
+}
+
+//........................................
+function mostra_Nota(materia, tipo){
+var mlarg = screen.width;
+document.getElementById("window_notas").style.display = "block";
+
+document.getElementById("frame_notas").src = "simulados_admin/carrega_notaXA.php?f_ano=&rm=&materia="+materia+"&tipo="+tipo+"&screen="+mlarg;
+//.............................
+if(screen.width > 991){
+var larguraX = 74;
+}else{
+var larguraX = 100;
+}
+var minhaLargura = parseInt((larguraX * screen.width) / 100);
+if(screen.width > 991){
+var xpos =  parseInt((screen.width - minhaLargura) / 2);
+}else{
+var xpos = 0;
+}
+document.getElementById("window_notas").style.left = xpos + "px";
+
+setTimeout("window.scrollTo(0,0)", 500);
+
+}
+
+//.....................................................................
+
+function mostra_Nota_OLD(materia, tipo){
+var xlarg = 300;
+var xalt = 490;
+var mlarg = screen.width;
+var malt = screen.height;
+var xpos = Number(mlarg-xlarg)/2;
+var ypos = Number(((malt-xalt)/2)-50);
+//..................
+my_window1("simulados_admin/mostra_notaXA.php?f_ano=&rm=&materia="+materia+"&tipo="+tipo+"&screen="+mlarg, 700, 550);
+
+}
+
+//..............................
+
+function abre_Popup(xalt){
+var item1K;
+var item2K;
+//..............
+
+document.getElementById("window_confirm").style.display = "block";
+//document.getElementById("window_confirm").innerHTML =  document.getElementById("window_confirm").innerHTML + "<center><img src=\"images/popup1.jpg\" border=\"0\" style=\"width:100%\"></center>";
+//....................
+
+//..........
+if(screen.width > 992){
+var larguraX = 74;
+var maxWidth = 1000;
+}else{
+var larguraX = 100;
+var maxWidth = screen.width;
+}
+var minhaLargura = parseInt((larguraX * screen.width) / 100);
+document.getElementById("window_confirm").style.height = "95%";
+document.getElementById("window_confirm").style.width = larguraX+"%";
+document.getElementById("window_confirm").style.maxWidth = maxWidth + "px";
+
+
+var mlarg = screen.width;
+if(screen.width > 992){
+var xpos = (parseInt(mlarg/2)) - (parseInt(minhaLargura/2)) - 30;
+}else{
+var xpos = 0;
+}
+document.getElementById("window_confirm").style.left = xpos + "px";
+
+//..........
+
+}
+
+//...............
+function mostra_Link(Codigo){
+
+//...............................
+var inputs = document.getElementsByTagName('a');
+var pegaTitulo = "";
+var materiaX = document.URL;
+var materiaXX = "http://www.martinsinho.com.br/site/painel_educacao_fisica_ano1A.php";
+var resMateria = materiaX.split("_");
+
+var estaMateria;
+if(resMateria.length == 3){
+estaMateria = resMateria[1];
+}
+if(resMateria.length == 4){
+estaMateria = resMateria[1] + " " + resMateria[2];
+}
+
+for(m=0;m < inputs.length;m++){
+if(inputs[m].href.indexOf("abre_Popup1(\'"+Codigo+"\')") != "-1"){
+/*inputs[m].style.display = "table-row"; */
+pegaTitulo += inputs[m].title + " " + inputs[m].innerText;
+}
+
+}
+
+var number = Math.floor(Math.random() * 10000000) + 1;
+
+document.getElementById("frame_grava").src = "atualiza_acesso.php?key="+number+"&matr=&data=2026/04/14 23:43:16&titulo=" + pegaTitulo +"&materia=" + estaMateria;
+}
+
+//.............................................
+
+function abre_Popup1(Cod){
+//document.getElementById("frame_grava").src = "nada.php";
+mostra_Link(Cod);
+document.getElementById("window_confirm").style.display = "block";
+//frame_vimeo" name="frame_vimeo" src="https://player.vimeo.com/video/401698280
+document.getElementById("frame_vimeo").src = "https://player.vimeo.com/video/" + Cod;
+//.............................
+if(screen.width > 991){
+var larguraX = 74;
+}else{
+var larguraX = 100;
+}
+var minhaLargura = parseInt((larguraX * screen.width) / 100);
+if(screen.width > 991){
+//var xpos = (parseInt(screen.width/2)) - (parseInt(minhaLargura/2));
+var xpos =  parseInt((screen.width - minhaLargura) / 2);
+}else{
+var xpos = 0;
+}
+document.getElementById("window_confirm").style.left = xpos + "px";
+
+setTimeout("window.scrollTo(0,0)", 500);
+
+}
+
+//.....................................................................
+function mostra_Link_PDF(URL){
+var inputs = document.getElementsByTagName('a');
+var pegaTitulo = "";
+var materiaX = document.URL;
+var resMateria = materiaX.split("_");
+
+var estaMateria;
+if(resMateria.length == 3){
+estaMateria = resMateria[1];
+}
+if(resMateria.length == 4){
+estaMateria = resMateria[1] + " " + resMateria[2];
+}
+
+for(m=0;m < inputs.length;m++){
+if(inputs[m].href.indexOf("abre_Popup_PDF(\'"+URL+"\')") != "-1"){
+pegaTitulo += inputs[m].title + " " + inputs[m].innerText;
+}
+
+}
+
+var number = Math.floor(Math.random() * 10000000) + 1;
+//..........
+var Dados = "";
+Dados += navigator.platform +"**";
+Dados += navigator.appVersion +"**";
+Dados += navigator.userAgent +"**";
+Dados += screen.width +"";
+
+document.getElementById("frame_grava").src = "atualiza_acesso.php?dados="+Dados+"&key="+number+"&matr=&data=2026/04/14 23:43:16&titulo=" + pegaTitulo +"&materia=" + estaMateria;
+}
+
+//.............................................
+function abre_Popup_NOTA(URL, Materia){
+
+document.getElementById("window_confirm").style.display = "block";
+
+document.getElementById("frame_vimeo").src = URL;
+//.............................
+if(screen.width > 991){
+var larguraX = 74;
+}else{
+var larguraX = 100;
+}
+var minhaLargura = parseInt((larguraX * screen.width) / 100);
+
+if(screen.width > 991){
+
+var xpos =  parseInt((screen.width - minhaLargura) / 2);
+document.getElementById("window_confirm").style.left = "0px";
+}else{
+var xpos = 0;
+setTimeout("document.getElementById('window_confirm').style.left = '0px'", 400);
+}
+
+
+setTimeout("window.scrollTo(0,0)", 500);
+
+}
+
+//.....................................................................
+function abre_Popup_PDF(URL){
+
+mostra_Link_PDF(URL);
+document.getElementById("window_confirm").style.display = "block";
+
+document.getElementById("frame_vimeo").src = URL;
+//.............................
+if(screen.width > 991){
+var larguraX = 74;
+}else{
+var larguraX = 100;
+}
+var minhaLargura = parseInt((larguraX * screen.width) / 100);
+if(screen.width > 991){
+//var xpos = (parseInt(screen.width/2)) - (parseInt(minhaLargura/2));
+var xpos =  parseInt((screen.width - minhaLargura) / 2);
+}else{
+var xpos = 0;
+}
+document.getElementById("window_confirm").style.left = xpos + "px";
+
+setTimeout("window.scrollTo(0,0)", 500);
+
+}
+
+//.....................................................................
+
+
+function esconde_popup(){
+document.getElementById("window_confirm").style.display = "none";
+}
+
+function esconde_popup1(){
+document.getElementById("window_confirm").style.height = "1%";
+semAudio();
+setTimeout("document.getElementById('window_confirm').style.display = 'none'", 3000);
+
+}
+
+function esconde_popup2(){
+//document.getElementById("window_confirm").style.height = "1%";
+semAudio();
+setTimeout("document.getElementById('window_confirm').style.display = 'none'", 800);
+
+}
+
+function esconde_popup3(){
+document.getElementById("frame_notas").src = "nada_transp.php";
+setTimeout("document.getElementById('window_notas').style.display = 'none'", 800);
+}
+
+//.......................................................................
+
+function playPause(){
+
+if (document.getElementById("videoX").paused)
+  document.getElementById("videoX").play();
+else
+  document.getElementById("videoX").pause();
+}
+
+function semAudio(){
+//document.getElementById("videoX").muted = true;
+document.getElementById("frame_vimeo").src = "nada_transp.php";
+}
+
+//..................................................................
+function mostra_Dado(){
+var iframe = document.getElementById('frame_vimeo');
+
+   var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+   alert(innerDoc.body.innerHTML);
+
+//var ulObj = innerDoc.getElementById("player");
+//var largura_video = ulObj.clientWidth;
+//alert(largura_video);
+}
+
+</script>
+<IFRAME name="frame_grava" id="frame_grava" SRC="nada.php" width="10" height="1" style="border:1px none #FF0000" border="1" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" allowtransparency="true"></IFRAME>
+
+<div align="center" id="window_confirm" name="window_confirm" style="display:none;background:none;/*background-color:rgba(255,255,255,0.55);*/border:1px none #0000FF;">
+
+<p id="p_fecha" style="text-align:center;"><a href="javascript:esconde_popup2();" title="FECHAR">
+<img id="img_fecha" class="img_fecha" src="images/xis4.png" border="0" style="">
+</a></p>
+
+<!--
+<iframe src="https://player.vimeo.com/video/401698280" width="640" height="1138" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+-->
+<div id="div_sobre" name="div_sobre">
+<img id="img_fecha1" class="img_fecha1" src="logo-martinsinho-vimeo1.png" border="0" style="">
+</div>
+<iframe id="frame_vimeo" name="frame_vimeo" src="" width="90%" height="550" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+</div>
+
+<div align="center" id="window_notas" name="window_notas" style="display:none;background:none;/*background-color:rgba(255,255,255,0.55);*/border:1px none #0000FF;">
+
+<p id="p_fecha2" style="text-align:center;"><a href="javascript:esconde_popup3();" title="FECHAR">
+<img id="img_fecha2" class="img_fecha" src="images/xis4.png" border="0" style="">
+</a></p>
+
+<iframe id="frame_notas" name="frame_notas" src="" width="90%" height="550" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+</div>
+
+
+
+<script>
+ var number = 0;
+ function teste_Tempo(){
+ number++;
+ document.getElementById("frame_teste").src = "renovaTV.php?user=&ano=&key="+number;
+ }
+
+</script>
+<script>
+//var executa_T = setInterval(function(){ teste_Tempo(); }, 9000);
+//setTimeout("BT_Notas()", 500);
+</script>
+<!--   .............................................................................. -->
+</html>
+
+
+
