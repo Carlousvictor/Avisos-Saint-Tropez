@@ -1,0 +1,90 @@
+:root {
+  /* Saint Tropez Palette */
+  --st-light-blue: #53B5FD;
+  --st-teal:       #009999;
+  --st-mid-blue:   #039CC9;
+  --st-dark-blue:  #027191;
+  --st-light:      #C1E8FF;
+
+  /* Modern Colors */
+  --bg:      #f0f4f8;
+  --surface: #ffffff;
+  --border:  #e1e8ef;
+  --text:    #1a202c;
+  --muted:   #718096;
+  
+  /* Status Colors */
+  --daily:     #ef4444;
+  --weekly:    #f97316;
+  --biweekly:  #eab308;
+  --monthly:   #22c55e;
+  --quarterly: #8b5cf6;
+
+  /* Sizes & Effects */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --glass: rgba(255, 255, 255, 0.8);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Glassmorphism */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.4s var(--ease) forwards;
+}
