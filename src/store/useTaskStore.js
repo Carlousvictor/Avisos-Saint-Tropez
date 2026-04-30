@@ -11,28 +11,40 @@ export const PERIODS = [
 
 const DEFAULT_TASKS = {
   daily: [
-    'Varrição – Alamedas / Rua Principal / Estacionamento / Quadra / Calçada Dulcídio',
+    'Varrição – Alamedas / Rua Principal / Estacionamento / Quadra / Calçada Dulcídio / Jardim e Quintal ADM com rega',
     'Esvaziar as lixeiras dos postes',
-    'Higienização do Parquinho – Varrer e passar produto',
+    'Higienização do Parquinho – Varrer e passar produto em todos os brinquedos',
     'Limpeza Banheiros Guaritas e Quadra',
-    'Limpeza Guaritas – Varrer / Passar pano balcão / Janelas',
-    'Coleta de Lixo – 10:30 e 15h',
-    'Verificação de lâmpadas e carrinhos',
+    'Limpeza Guaritas – Varrer / Passar pano balcão / Limpar janelas / Frigobar / Interfone',
+    'Higienização do bebedouro da Quadra',
+    'Coleta de Lixo – 10:30 e 15h / 13h aos fins de semana',
+    'Verificação de sacos de dejetos',
+    'Verificação de lâmpadas',
+    'Verificação de rodas dos carrinhos (Compras / Lixo / Carga)',
+    'Verificação de copos / Papel higiênico / Papel toalha',
   ],
   weekly: [
-    'Limpeza Administração (Mesas/Geladeira/Banheiro)',
-    'Limpeza dos Ralos (Bocas de Lobo) – Sexta-feira',
-    'Limpeza / Manutenção Jardim do Canal',
-    'Limpeza Copa Funcionários',
+    'Limpeza Administração – (Mesas / Geladeira / Pia / Banheiro)',
+    'Limpeza Banheiro Salão – Segunda (ou Sexta caso haja festa)',
+    'Limpeza dos Ralos (Bocas de Lobo) – Sexta-feira ou quando houver previsão de chuva forte',
+    'Limpeza / Manutenção Jardim do Canal (Externo – Ciclovia) – Varrição / Capina',
+    'Manutenção Pedras Portuguesas',
+    'Limpeza Banheiro / Vestiário Funcionários',
+    'Limpeza dos Portões Garagem e Pedestres – Canal e Américas',
+    'Limpeza Copa Funcionários – Microondas / Geladeira / Ventilador / Pia (Cuba e Bancada)',
+    'Verificação de Caixas de Gordura das Alamedas',
   ],
   biweekly: [
-    'Cortar Grama Américas / Gramadão / Alameda 1',
+    'Cortar Grama Américas / Gramadão / Alameda 1 / 3 Casas',
     'Lavagem da Churrasqueira',
-    'Poda de Plantas (Alamedas e Câmeras)',
+    'Lavagem Bancos e Lixeiras dos Postes',
+    'Lavagem de Toldos do Salão',
+    'Poda de Plantas que impedem as Alamedas e Câmeras',
+    'Lavagem das Luminárias',
   ],
   monthly: [
-    'Limpeza Calhas e Telhados',
-    'Limpeza das Caixas d\'Água',
+    'Limpeza Calhas e Telhados Salão / Administração / Guaritas',
+    'Limpeza das Caixas d\'Água Salão e Administração',
     'Lavagem das Alamedas',
   ],
   quarterly: [
@@ -42,14 +54,8 @@ const DEFAULT_TASKS = {
 
 export const useTaskStore = create(
   persist(
-    (set, get) => ({
-      tasks: (() => {
-        const initial = {};
-        PERIODS.forEach(p => {
-          initial[p.id] = DEFAULT_TASKS[p.id] || [];
-        });
-        return initial;
-      })(),
+    (set) => ({
+      tasks: DEFAULT_TASKS,
 
       addTask: (periodId, text) => set((state) => ({
         tasks: {
@@ -71,23 +77,15 @@ export const useTaskStore = create(
           [periodId]: state.tasks[periodId].map((t, i) => i === index ? newText : t)
         }
       })),
-      
-      // Move task between periods
-      moveTask: (fromPeriod, toPeriod, index) => set((state) => {
-        const task = state.tasks[fromPeriod][index];
-        const newFrom = state.tasks[fromPeriod].filter((_, i) => i !== index);
-        const newTo = [...(state.tasks[toPeriod] || []), task];
-        return {
-          tasks: {
-            ...state.tasks,
-            [fromPeriod]: newFrom,
-            [toPeriod]: newTo
-          }
-        };
-      }),
+
+      resetTasks: () => {
+        if (confirm('Deseja resetar todas as tarefas para o padrão original?')) {
+          set({ tasks: DEFAULT_TASKS });
+        }
+      }
     }),
     {
-      name: 'saint-tropez-tasks',
+      name: 'saint-tropez-tasks-v4',
     }
   )
 );

@@ -88,3 +88,44 @@ h1, h2, h3, h4 {
 .animate-fade {
   animation: fadeIn 0.4s var(--ease) forwards;
 }
+
+/* Print Styles */
+@media print {
+  header, 
+  footer, 
+  button, 
+  .add-btn, 
+  .task-actions {
+    display: none !important;
+  }
+  
+  body {
+    background-color: white !important;
+    padding: 0 !important;
+  }
+
+  .container, 
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .grid {
+    display: block !important;
+  }
+
+  .glass {
+    background: white !important;
+    border: 1px solid #eee !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    margin-bottom: 20px;
+  }
+
+  /* Force display of columns in print */
+  [class*="grid-cols"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+

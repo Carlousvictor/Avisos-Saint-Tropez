@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar } from 'lucide-react';
+import { Calendar, Printer, RotateCcw } from 'lucide-react';
+import { useTaskStore } from '../store/useTaskStore';
 
 const Header = () => {
   const [date, setDate] = useState('');
+  const resetTasks = useTaskStore(state => state.resetTasks);
 
   useEffect(() => {
     const d = new Date();
@@ -36,15 +38,34 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="hidden md:flex items-center gap-3 bg-white/50 px-4 py-2 rounded-full border border-white/40 shadow-sm">
-          <Calendar className="w-4 h-4 text-[#039CC9]" />
-          <span className="text-sm font-medium text-slate-700">
-            {date}
-          </span>
+        <div className="flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3 bg-white/50 px-4 py-2 rounded-full border border-white/40 shadow-sm mr-2">
+            <Calendar className="w-4 h-4 text-[#039CC9]" />
+            <span className="text-sm font-medium text-slate-700">
+              {date}
+            </span>
+          </div>
+          
+          <button 
+            onClick={() => window.print()}
+            className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm"
+            title="Imprimir Quadro"
+          >
+            <Printer className="w-5 h-5" />
+          </button>
+          
+          <button 
+            onClick={resetTasks}
+            className="p-2.5 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-red-600 hover:border-red-200 transition-all shadow-sm"
+            title="Resetar Tarefas"
+          >
+            <RotateCcw className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </header>
   );
 };
+
 
 export default Header;
