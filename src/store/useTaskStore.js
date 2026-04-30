@@ -85,7 +85,7 @@ export const useTaskStore = create(
       }
     }),
     {
-      name: 'saint-tropez-tasks-v4',
+      name: 'sainttropez_board_v3',
     }
   )
 );

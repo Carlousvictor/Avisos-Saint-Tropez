@@ -15,11 +15,11 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen pb-12">
+    <div className="app-container">
       <Header />
       
-      <main className="px-8 max-w-[1800px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <div className="board-wrap">
+        <div className="board">
           {PERIODS.map((period) => (
             <TaskColumn 
               key={period.id}
@@ -31,7 +31,7 @@ function App() {
             />
           ))}
         </div>
-      </main>
+      </div>
 
       <TaskModal 
         isOpen={modalOpen}
@@ -39,10 +39,6 @@ function App() {
         onSave={(pid, text) => addTask(pid, text)}
         initialPeriodId={selectedPeriod}
       />
-
-      <footer className="mt-16 text-center text-slate-400 text-xs font-medium uppercase tracking-widest">
-        <p>© 2026 Condomínio Jardim Saint Tropez • Gestão Eficiente</p>
-      </footer>
     </div>
   );
 }
