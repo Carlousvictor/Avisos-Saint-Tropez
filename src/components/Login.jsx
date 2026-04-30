@@ -46,7 +46,7 @@ const Login = () => {
           color: '#027191',
           marginBottom: '8px'
         }}>
-          Acesso Restrito
+          Quadro de Avisos
         </h2>
         <p style={{ 
           fontSize: '0.85rem', 
