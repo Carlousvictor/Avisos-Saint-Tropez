@@ -369,12 +369,77 @@ select.field {
 .btn-ghost:hover { background: #e2e8f0; color: var(--text); }
 
 @media print {
-  header, .add-btn, .task-actions, .modal-bg { display: none !important; }
-  body { background: #fff; }
-  .board { display: block; }
-  .col { border: 1px solid #ccc; margin-bottom: 16px; page-break-inside: auto; }
-  .task-item { border-bottom: 1px solid #eee; page-break-inside: avoid; }
+  @page {
+    size: landscape;
+    margin: 1cm;
+  }
+
+  body {
+    background: #fff !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  header {
+    position: static !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px !important;
+    padding: 10px 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  header .brand-text h1 { color: var(--st-dark-blue) !important; }
+  header .brand-text p { color: var(--st-teal) !important; }
+  header .header-date { border: 1px solid #ccc; box-shadow: none; }
+
+  .board-wrap {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .board {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 10px !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .col {
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .col-body {
+    background: #fff !important;
+  }
+
+  .task-item {
+    border-bottom: 1px solid #eee !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Force background colors to print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide UI elements */
+  .add-btn, 
+  .task-actions, 
+  .col-footer, 
+  .modal-bg,
+  .act-btn {
+    display: none !important;
+  }
 }
+
 
 @media (max-width: 900px) {
   header { padding: 12px 16px; gap: 8px; }
