@@ -2,11 +2,11 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 export const PERIODS = [
-  { id: 'daily', label: 'Diária', sub: 'Todos os dias', color: 'var(--daily)' },
-  { id: 'weekly', label: 'Semanal', sub: 'Uma vez por semana', color: 'var(--weekly)' },
-  { id: 'biweekly', label: 'Quinzenal', sub: 'A cada 15 dias', color: 'var(--biweekly)' },
-  { id: 'monthly', label: 'Mensal', sub: 'Uma vez por mês', color: 'var(--monthly)' },
-  { id: 'quarterly', label: 'Trimestral', sub: 'A cada 3 meses', color: 'var(--quarterly)' },
+  { id: 'daily', label: 'Diária', sub: 'Todos os dias', color: 'var(--c-daily)' },
+  { id: 'weekly', label: 'Semanal', sub: 'Uma vez por semana', color: 'var(--c-weekly)' },
+  { id: 'biweekly', label: 'Quinzenal', sub: 'A cada 15 dias', color: 'var(--c-biweekly)' },
+  { id: 'monthly', label: 'Mensal', sub: 'Uma vez por mês', color: 'var(--c-monthly)' },
+  { id: 'quarterly', label: 'Trimestral', sub: 'A cada 3 meses', color: 'var(--c-quarterly)' },
 ];
 
 const DEFAULT_TASKS = {

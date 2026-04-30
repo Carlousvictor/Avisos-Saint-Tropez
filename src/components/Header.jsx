@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import logo from '../assets/logo-sainttropez.png';
+
 const Header = () => {
   const [date, setDate] = useState('');
 
@@ -18,7 +20,7 @@ const Header = () => {
     <header>
       <div className="brand">
         <div className="brand-logo">
-          <img src="http://www.jardimsainttropez.com.br/logo-palavra3.png" alt="Jardim Saint Tropez" />
+          <img src={logo} alt="Jardim Saint Tropez" />
         </div>
         <div className="brand-text">
           <h1>Quadro de Tarefas</h1>
