@@ -40,34 +40,41 @@ body {
 /* ─── Header ─── */
 header {
   background: linear-gradient(135deg, var(--st-mid-blue) 0%, var(--st-dark-blue) 100%);
-  padding: 14px 32px;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   position: sticky; top: 0; z-index: 200;
   box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  height: 64px; /* Fixed height for header */
 }
-.brand { display: flex; align-items: center; gap: 16px; }
-.brand-logo img { height: 46px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-.brand-text h1 { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: -.3px; }
-.brand-text p  { font-size: .8rem; color: var(--st-light); opacity: .85; margin-top: 2px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-logo img { height: 38px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
+.brand-text h1 { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; letter-spacing: -.3px; }
+.brand-text p  { font-size: .75rem; color: var(--st-light); opacity: .85; margin-top: 1px; }
 
 .header-date {
-  font-size: .82rem; font-weight: 600; color: #1e4a63;
+  font-size: .75rem; font-weight: 600; color: #1e4a63;
   background: #fff;
-  padding: 7px 16px; border-radius: 30px;
+  padding: 6px 14px; border-radius: 30px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   white-space: nowrap;
 }
 
+
 /* ─── Board ─── */
-.board-wrap { flex: 1; overflow-x: auto; padding: 28px 32px 48px; }
+.board-wrap { 
+  flex: 1; 
+  padding: 16px 20px; 
+  height: calc(100vh - 64px); /* Full height minus header */
+  overflow: hidden; 
+}
 .board {
   display: grid;
-  grid-template-columns: repeat(5, minmax(270px, 1fr));
-  gap: 20px;
-  min-width: 1200px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  height: 100%;
 }
 @media (max-width: 700px) {
   .board-wrap { padding: 12px 10px 40px; overflow-x: unset; }
@@ -128,7 +135,10 @@ header {
   display: flex;
   flex-direction: column;
   background: #f8fafc;
+  overflow-y: auto; /* Internal scroll only */
+  min-height: 0;
 }
+
 
 /* Tarefa individual */
 .task-item {
@@ -164,13 +174,14 @@ header {
   min-width: 0;
 }
 .task-text {
-  font-size: .855rem;
+  font-size: 0.8rem; /* Slightly smaller */
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.4;
   color: var(--text);
   word-break: break-word;
   white-space: pre-wrap;
 }
+
 
 .task-actions {
   flex-shrink: 0;
